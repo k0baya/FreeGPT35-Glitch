@@ -9,9 +9,11 @@ You can add variables in `.env` file.
 | Key         | Value                          | Note                                      |
 |-------------|----------------------------------------|-------------------------------------------|
 | `AUTH_TOKEN` | any_string_you_like | This is your API key for accessing FreeGPT35. |
+|`ARGO_AUTH`|Cloudflared token|Use Argo Tunnel to access FreeGPT35 (Optional)|
 
 >If no settings are made, then any API-Key can be accessed
 
+>If you are using the Argo Tunnel, the `3000` port can add the `AUTH_TOKEN`, and the `3040` port can be accessed with any API-Key.
 ### Usage
 Use the URL that Glitch provided as endpoint.
 ```bash
