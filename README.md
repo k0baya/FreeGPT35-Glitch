@@ -1,6 +1,10 @@
 ## FreeGPT35-Glitch
 
-You can deploy this repository to Glitch by clicking [This link](https://glitch.com/edit/#!/import/git?url=https://github.com/k0baya/FreeGPT35-Glitch).
+You can deploy this repository on Glitch by uploading the files. 
+
+First, download the repository using [this link](<https://github.com/k0baya/FreeGPT35-Glitch/archive/refs/heads/reserve-proxy.zip>).
+
+After unzipping it, upload all the files to Glitch, set the variables, and you're all set to enjoy.
 
 ### Variables
 
