@@ -5,7 +5,7 @@ const https = require("https");
 const { randomUUID } = require("crypto");
 
 // Constants for the server and API configuration
-const port = 3040;
+const port = 3000;
 const baseUrl = "https://chat.openai.com";
 const apiUrl = `${baseUrl}/backend-api/conversation`;
 const refreshInterval = 60000; // Interval to refresh token in ms
@@ -288,7 +288,7 @@ app.use((req, res) =>
   res.status(404).send({
     status: false,
     error: {
-      message: `The requested endpoint was not found. please make sure to use "http://localhost:3040/v1" as the base URL.`,
+      message: `The requested endpoint was not found. please make sure to use "http://localhost:3000/v1" as the base URL.`,
       type: "invalid_request_error",
     },
   })
