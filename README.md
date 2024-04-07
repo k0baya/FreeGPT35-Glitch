@@ -17,7 +17,7 @@ You can add variables in `.env` file.
 
 >If no settings are made, then any API-Key can be accessed
 
->If you are using the Argo Tunnel, the `3000` port can add the `AUTH_TOKEN`, and the `3040` port can be accessed with any API-Key.
+>If you are using the Argo Tunnel, add the `http://localhost:3000` in your dashboard.
 ### Usage
 Use the URL that Glitch provided as endpoint.
 ```bash
