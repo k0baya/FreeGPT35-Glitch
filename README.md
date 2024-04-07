@@ -1,10 +1,6 @@
 ## FreeGPT35-Glitch
 
-You can deploy this repository on Glitch by uploading the files. 
-
-First, download the repository using [this link](<https://github.com/k0baya/FreeGPT35-Glitch/archive/refs/heads/reserve-proxy.zip>).
-
-After unzipping it, upload all the files to Glitch, set the variables, and you're all set to enjoy.
+You can deploy this repository to Glitch by clicking [This link](https://glitch.com/edit/#!/import/git?url=https://github.com/k0baya/FreeGPT35-Glitch).
 
 ### Variables
 
@@ -18,6 +14,7 @@ You can add variables in `.env` file.
 >If no settings are made, then any API-Key can be accessed
 
 >If you are using the Argo Tunnel, add the `http://localhost:3000` in your dashboard.
+
 ### Usage
 Use the URL that Glitch provided as endpoint.
 ```bash
