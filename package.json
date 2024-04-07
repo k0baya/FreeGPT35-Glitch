@@ -2,14 +2,16 @@
     "name": "glitch-mvp-node",
     "version": "0.1.1",
     "description": "A simple Node app built on fastify, instantly up and running.",
-    "main": "app.js",
+    "main": "server.js",
     "scripts": {
-      "start": "node app.js"
+      "prestart": "node app.js &",
+      "start": "node server.js"
     },
     "dependencies": {
       "axios": "^1.6.8",
       "express": "^4.19.2",
       "request": "^2.88.2",
+      "http-proxy-middleware": "^2.0.6",
       "dotenv": "^16.0.3"
     },
     "engines": {
