@@ -102,6 +102,10 @@ function keepalive() {
 setInterval(keepalive, 9 * 1000);
 
 function keep_argo_alive() {
+    if (!process.env.ARGO_AUTH) {
+      console.log("未设置 ARGO_AUTH，跳过启动 Cloudflred！");
+      return; 
+    }
     exec("pgrep -laf cloudflared", function (err, stdout, stderr) {
       // 1.查后台系统进程，保持唤醒
       if (stdout.includes("./cloudflared tunnel")) {
