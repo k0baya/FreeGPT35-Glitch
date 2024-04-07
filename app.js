@@ -5,7 +5,7 @@ const https = require("https");
 const { randomUUID } = require("crypto");
 
 // Constants for the server and API configuration
-const port = 3000;
+const port = 3040;
 const baseUrl = "https://chat.openai.com";
 const apiUrl = `${baseUrl}/backend-api/conversation`;
 const refreshInterval = 60000; // Interval to refresh token in ms
@@ -17,21 +17,6 @@ let oaiDeviceId;
 
 // Function to wait for a specified duration
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-function authMiddleware(req, res, next) {
-  const authToken = process.env.AUTH_TOKEN;
-
-  if (authToken) {
-      const reqAuthToken = req.headers.authorization;
-      if (reqAuthToken && reqAuthToken === `Bearer ${authToken}`) {
-          next();
-      } else {
-          res.sendStatus(401);
-      }
-  } else {
-      next();
-  }
-}
 
 function GenerateCompletionId(prefix = "cmpl-") {
   const characters =
@@ -281,7 +266,7 @@ app.use(bodyParser.json());
 app.use(enableCORS);
 
 // Route to handle POST requests for chat completions
-app.post("/v1/chat/completions", authMiddleware, handleChatCompletion);
+app.post("/v1/chat/completions", handleChatCompletion);
 
 // 404 handler for unmatched routes
 app.use((req, res) =>
