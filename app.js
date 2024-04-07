@@ -18,6 +18,21 @@ let oaiDeviceId;
 // Function to wait for a specified duration
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+function authMiddleware(req, res, next) {
+  const authToken = process.env.AUTH_TOKEN;
+
+  if (authToken) {
+      const reqAuthToken = req.headers.authorization;
+      if (reqAuthToken && reqAuthToken === `Bearer ${authToken}`) {
+          next();
+      } else {
+          res.sendStatus(401);
+      }
+  } else {
+      next();
+  }
+}
+
 function GenerateCompletionId(prefix = "cmpl-") {
   const characters =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -266,7 +281,7 @@ app.use(bodyParser.json());
 app.use(enableCORS);
 
 // Route to handle POST requests for chat completions
-app.post("/v1/chat/completions", handleChatCompletion);
+app.post("/v1/chat/completions", authMiddleware, handleChatCompletion);
 
 // 404 handler for unmatched routes
 app.use((req, res) =>
