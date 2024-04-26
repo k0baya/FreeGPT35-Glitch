@@ -505,5 +505,5 @@ app.listen(port, async () => {
     console.log("📝 Author: Pawan.Krd");
     console.log(`🌐 Discord server: https://discord.gg/pawan`);
     console.log("🌍 GitHub Repository: https://github.com/PawanOsman/ChatGPT");
-    console.log(`💖 Don't forget to star the repository if you like this project!`);
-  });
+    console.log(`💖 Don't forget to star the repository if you like this project!`  );
+});
